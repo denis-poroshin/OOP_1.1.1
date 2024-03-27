@@ -13,12 +13,13 @@ public class Slytherin extends Hgwarts{
         this.resourcefulness = resourcefulness;
         this.lustForPower = lustForPower;
     }
-    public void studentDescription(Slytherin slytherin){
+    public static void studentDescription(Hgwarts student){
+        Slytherin newStudent = (Slytherin) student;
         System.out.println("Качества которые присущи всем студентам Грифиндора: благородство, честь, храбрость.");
         System.out.println("Качества которые присущи всем студентам Пуффендуй: трудолюбие, верность, честность.");
         System.out.println("Качества которые присущи всем студентам Когтевран: ум, мудрость, остроумие, творчество.");
         System.out.println("Качества которые присущи всем студентам Слизерин: хитрость, решительность, амбициозность, находчивость, жажда власти.");
-        System.out.println(slytherin.toString());
+        System.out.println(newStudent.toString());
 
 
     }
@@ -74,17 +75,18 @@ public class Slytherin extends Hgwarts{
                 "Жажда власти: " + lustForPower + "\n";
     }
 
-    public static void equalsStudent(Slytherin frist, Slytherin second) {
-        int fristTotal = frist.getCunning() + frist.getDetermination() + frist.getAmbition() + frist.getResourcefulness() + frist.getLustForPower();
-        int secondTotal = second.getCunning() + second.getDetermination() + second.getAmbition() + second.getResourcefulness() + second.getLustForPower();
-        if(fristTotal > secondTotal){
-            System.out.println("Студент: " + frist.getName() + " " + frist.getSurname() + " лучший в Слизерине чем " + second.getName() + " " + second.getSurname());
-        }else if (fristTotal == secondTotal) {
-            System.out.println("Студенты: " + frist.getName() + " " + frist.getSurname() + " и " + second.getName() + " " + second.getSurname() + "одинаково хороши" +
-                    " на совем факулитете");
+    public void equalsStudent(Hgwarts frist) {
+        Slytherin that = (Slytherin) frist;
+        int fristTotal = that.getCunning() + that.getDetermination() + that.getAmbition() + that.getResourcefulness() + that.getLustForPower();
+        int thisTotal =  this.cunning + this.determination + this.ambition + this.resourcefulness + that.lustForPower;
+        if(fristTotal > thisTotal){
+            System.out.println("Студент: " + frist.getName() + " " + frist.getSurname() + " лучший в Слизерине чем " + this.name + " " + this.surname);
 
+        }else if (fristTotal == thisTotal) {
+            System.out.println("Студенты: " + frist.getName() + " " + frist.getSurname() + " и " + this.name + " " + this.surname + "одинаково хороши" +
+                    " на совем факулитете");
         }else {
-            System.out.println("Студент: " + second.getName() + " " + second.getSurname() + " лучший в Слизерине чем" + frist.getName() + " " + frist.getSurname());
+            System.out.println("Студент: " + this.name + " " + this.surname + " лучший в Слизерине чем" + frist.getName() + " " + frist.getSurname());
         }
 
 

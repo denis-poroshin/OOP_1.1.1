@@ -34,12 +34,14 @@ public class Hufflepuff extends Hgwarts{
     public void setHonesty(int honesty) {
         this.honesty = honesty;
     }
-    public static void studentDescription(Hufflepuff hufflepuff){
+    public static void studentDescription(Hgwarts student){
+        Hufflepuff newStudent = (Hufflepuff) student;
         System.out.println("Качества которые присущи всем студентам Грифиндора: благородство, честь, храбрость.");
         System.out.println("Качества которые присущи всем студентам Пуффендуй: трудолюбие, верность, честность.");
         System.out.println("Качества которые присущи всем студентам Когтевран: ум, мудрость, остроумие, творчество.");
         System.out.println("Качества которые присущи всем студентам Слизерин: хитрость, решительность, амбициозность, находчивость, жажда власти.");
-        System.out.println(hufflepuff.toString());
+        System.out.println(newStudent.toString());
+
 
     }
 
@@ -52,17 +54,18 @@ public class Hufflepuff extends Hgwarts{
                 "Честность: " + honesty + "\n";
     }
 
-    public static void equalsStudent(Hufflepuff frist, Hufflepuff second) {
-        int fristTotal = frist.getHardWork() + frist.getLoyalty() + frist.getHonesty();
-        int secondTotal = second.getHardWork() + second.getLoyalty() + second.getHonesty();
-        if(fristTotal > secondTotal){
-            System.out.println("Студент: " + frist.getName() + " " + frist.getSurname() + " лучший в Пуффендуе чем " + second.getName() + " " + second.getSurname());
-        }else if (fristTotal == secondTotal) {
-            System.out.println("Студенты: " + frist.getName() + " " + frist.getSurname() + " и " + second.getName() + " " + second.getSurname() + "одинаково хороши" +
-                    " на совем факулитете");
+    public void equalsStudent(Hgwarts frist) {
+        Hufflepuff that = (Hufflepuff) frist;
+        int fristTotal = that.getHardWork() + that.getLoyalty() + that.getHonesty();
+        int thisTotal =  this.hardWork + this.loyalty + this.honesty;
+        if(fristTotal > thisTotal){
+            System.out.println("Студент: " + frist.getName() + " " + frist.getSurname() + " лучший в Пуффендуе чем " + this.name + " " + this.surname);
 
+        }else if (fristTotal == thisTotal) {
+            System.out.println("Студенты: " + frist.getName() + " " + frist.getSurname() + " и " + this.name + " " + this.surname + "одинаково хороши" +
+                    " на совем факулитете");
         }else {
-            System.out.println("Студент: " + second.getName() + " " + second.getSurname() + " лучший в Пуффендуе чем" + frist.getName() + " " + frist.getSurname());
+            System.out.println("Студент: " + this.name + " " + this.surname + " лучший в Пуффендуе чем " + frist.getName() + " " + frist.getSurname());
         }
 
 

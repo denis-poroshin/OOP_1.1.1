@@ -15,17 +15,18 @@ public abstract class Hgwarts{
 
     }
     //public abstract void equalsStudent(Hgwarts hgwarts, Hgwarts hgwarts1);
-    public static void equalsAllStudent(Hgwarts frist, Hgwarts second){
+    public void equalsAllStudent(Hgwarts frist){
         int fristTotal = frist.getThePowerOfMagic() + frist.getTransgression();
-        int secondTotal = frist.getThePowerOfMagic() + frist.getTransgression();
-        if(fristTotal > secondTotal){
-            System.out.println("Студент: " + frist.getName() + " " + frist.getSurname() + " лучший в Хогвартсе чем " + second.getName() + " " + second.getSurname());
-        }else if (fristTotal == secondTotal) {
-            System.out.println("Студенты: " + frist.getName() + " " + frist.getSurname() + " и " + second.getName() + " " + second.getSurname() + "одинаково хороши" +
+        int thisTotal = this.getThePowerOfMagic() + this.getTransgression();
+        if(fristTotal > thisTotal){
+            System.out.println("Студент: " + frist.getName() + " " + frist.getSurname() + " лучший в Хогвартсе чем " + this.getName() + " " + this.getSurname());
+
+        }else if (fristTotal == thisTotal) {
+            System.out.println("Студенты: " + frist.getName() + " " + frist.getSurname() + " и " + this.getName() + " " + this.getSurname() + "одинаково хороши" +
                     " в Хогвартсе");
 
         }else {
-            System.out.println("Студент: " + second.getName() + " " + second.getSurname() + " лучший в Хогвартсе чем" + frist.getName() + " " + frist.getSurname());
+            System.out.println("Студент: " + this.getName() + " " + this.getSurname() + " лучший в Хогвартсе чем " + frist.getName() + " " + frist.getSurname());
         }
 
 
