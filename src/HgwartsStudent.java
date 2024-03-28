@@ -1,4 +1,4 @@
-public abstract class Hgwarts{
+public abstract class HgwartsStudent{
     protected String name;
     protected String surname;
     protected int thePowerOfMagic;
@@ -6,7 +6,7 @@ public abstract class Hgwarts{
 
 
 
-    public Hgwarts(String name, String surname, int thePowerOfMagic, int transgression) {
+    public HgwartsStudent(String name, String surname, int thePowerOfMagic, int transgression) {
         this.name = name;
         this.surname = surname;
         this.thePowerOfMagic = thePowerOfMagic;
@@ -14,8 +14,8 @@ public abstract class Hgwarts{
 
 
     }
-    //public abstract void equalsStudent(Hgwarts hgwarts, Hgwarts hgwarts1);
-    public void equalsAllStudent(Hgwarts frist){
+
+    public void equalsAllStudent(HgwartsStudent frist){
         int fristTotal = frist.getThePowerOfMagic() + frist.getTransgression();
         int thisTotal = this.getThePowerOfMagic() + this.getTransgression();
         if(fristTotal > thisTotal){
@@ -65,5 +65,10 @@ public abstract class Hgwarts{
 
     public void setTransgression(int transgression) {
         this.transgression = transgression;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + this.surname;
     }
 }

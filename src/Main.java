@@ -1,47 +1,30 @@
 public class Main {
     public static void main(String[] args) {
 
-
-        Hgwarts[] hgwarts = {
-                //new Gryffindor("Гарри", "Поттер",100, 95 ,100, 95, 85),
-                //new Gryffindor("Гермиона", "Грейнджер", 95, 30, 95, 80, 80),
-                // new Gryffindor("Рон", "Уизли", 80, 50, 80, 90, 50),
-                //new Hufflepuff("Захария", "Смит", 70, 80, 50, 10, 100),
-                //new Hufflepuff("Седрик", "Диггори", 100, 85, 100, 90, 80),
-                //new Hufflepuff("Финч", "- Флетчли", 70, 60, 100, 90, 80),
-                //new Ravenclaw("Чжоу", "Чанг", 95, 75, 100, 50, 90, 30),
-                //new Ravenclaw("Падма", "Патил", 60, 70, 95, 80, 85, 35),
-                //new Ravenclaw("Маркус", "Белби", 50, 30, 90, 95, 70, 60),
-                //new Slytherin("Драко", "Малфой,", 58, 89, 100, 70, 30, 25, 50),
-                //new Slytherin("Грэхэм", "Монтегю", 70, 60, 35, 100, 80, 60, 70),
-                //new Slytherin("Грегори", "Гойл", 75, 60, 95, 30, 85, 100, 100)
-        };
-        Hgwarts garri = new Gryffindor("Гарри", "Поттер", 100, 95, 100, 95, 85);
-        Hgwarts germiona = new Gryffindor("Гермиона", "Грейнджер", 95, 30, 95, 80, 80);
-        Hgwarts ron = new Gryffindor("Рон", "Уизли", 80, 50, 80, 90, 50);
-        Hgwarts zechariah = new Hufflepuff("Захария", "Смит", 70, 80, 50, 10, 100);
-        Hgwarts sedric = new Hufflepuff("Седрик", "Диггори", 100, 85, 100, 90, 80);
-        Hgwarts finch = new Hufflepuff("Финч", "- Флетчли", 70, 60, 100, 90, 80);
-        Hgwarts zhou = new Ravenclaw("Чжоу", "Чанг", 95, 75, 100, 50, 90, 30);
-        Hgwarts padma = new Ravenclaw("Падма", "Патил", 60, 70, 95, 80, 85, 35);
-        Hgwarts marcus = new Ravenclaw("Маркус", "Белби", 50, 30, 90, 95, 70, 60);
-        Hgwarts drako = new Slytherin("Драко", "Малфой", 58, 89, 100, 70, 30, 25, 50);
-        Hgwarts graham = new Slytherin("Грэхэм", "Монтегю", 70, 60, 35, 100, 80, 60, 70);
-        Hgwarts gregorio = new Slytherin("Грегори", "Гойл", 75, 60, 95, 30, 85, 100, 100);
-
-        Gryffindor.studentDescription(ron);
-        Hufflepuff.studentDescription(finch);
-        Ravenclaw.studentDescription(marcus);
-        Slytherin.studentDescription(gregorio);
+        HgwartsStudent garri = new GryffindorStudent("Гарри", "Поттер", 100, 95, 100, 95, 85);
+        HgwartsStudent germiona = new GryffindorStudent("Гермиона", "Грейнджер", 95, 30, 95, 80, 80);
+        HgwartsStudent ron = new GryffindorStudent("Рон", "Уизли", 80, 50, 80, 90, 50);
+        HgwartsStudent zechariah = new HufflepuffStudent("Захария", "Смит", 70, 80, 50, 10, 100);
+        HgwartsStudent sedric = new HufflepuffStudent("Седрик", "Диггори", 100, 85, 100, 90, 80);
+        HgwartsStudent finch = new HufflepuffStudent("Финч", "- Флетчли", 70, 60, 100, 90, 80);
+        HgwartsStudent zhou = new RavenclawStudent("Чжоу", "Чанг", 95, 75, 100, 50, 90, 30);
+        HgwartsStudent padma = new RavenclawStudent("Падма", "Патил", 60, 70, 95, 80, 85, 35);
+        HgwartsStudent marcus = new RavenclawStudent("Маркус", "Белби", 50, 30, 90, 95, 70, 60);
+        HgwartsStudent drako = new SlytherinStudent("Драко", "Малфой", 58, 89, 100, 70, 30, 25, 50);
+        HgwartsStudent graham = new SlytherinStudent("Грэхэм", "Монтегю", 70, 60, 35, 100, 80, 60, 70);
+        HgwartsStudent gregorio = new SlytherinStudent("Грегори", "Гойл", 75, 60, 95, 30, 85, 100, 100);
 
 
-        ((Gryffindor) garri).equalsStudent(germiona);
-        ((Hufflepuff) zechariah).equalsStudent(sedric);
-        ((Ravenclaw) zhou).equalsStudent(padma);
-        ((Slytherin) drako).equalsStudent(graham);
+        System.out.println(garri);
+
+        ((GryffindorStudent) garri).equalsStudent((GryffindorStudent) germiona);
+        ((HufflepuffStudent) zechariah).equalsStudent((HufflepuffStudent)sedric);
+        ((RavenclawStudent) zhou).equalsStudent((RavenclawStudent) padma);
+        ((SlytherinStudent) drako).equalsStudent((SlytherinStudent) graham);
         System.out.println();
 
         garri.equalsAllStudent(gregorio);
+
 
 
         //hgwarts[0].equalsStudent(hgwarts[1]);

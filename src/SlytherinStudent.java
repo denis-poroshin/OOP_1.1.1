@@ -1,11 +1,11 @@
-public class Slytherin extends Hgwarts{
+public class SlytherinStudent extends HgwartsStudent{
     private int cunning; // хитрость
     private int determination; // решительность
     private int ambition; // амбициозность
     private int resourcefulness; // находчивость
     private int lustForPower; // жажда власти
 
-    public Slytherin(String name, String surname,int thePowerOfMagic, int transgression, int cunning, int determination, int ambition, int resourcefulness, int lustForPower) {
+    public SlytherinStudent(String name, String surname,int thePowerOfMagic, int transgression, int cunning, int determination, int ambition, int resourcefulness, int lustForPower) {
         super(name, surname, thePowerOfMagic, transgression);
         this.cunning = cunning;
         this.determination = determination;
@@ -13,16 +13,7 @@ public class Slytherin extends Hgwarts{
         this.resourcefulness = resourcefulness;
         this.lustForPower = lustForPower;
     }
-    public static void studentDescription(Hgwarts student){
-        Slytherin newStudent = (Slytherin) student;
-        System.out.println("Качества которые присущи всем студентам Грифиндора: благородство, честь, храбрость.");
-        System.out.println("Качества которые присущи всем студентам Пуффендуй: трудолюбие, верность, честность.");
-        System.out.println("Качества которые присущи всем студентам Когтевран: ум, мудрость, остроумие, творчество.");
-        System.out.println("Качества которые присущи всем студентам Слизерин: хитрость, решительность, амбициозность, находчивость, жажда власти.");
-        System.out.println(newStudent.toString());
 
-
-    }
 
     public int getCunning() {
         return cunning;
@@ -67,7 +58,11 @@ public class Slytherin extends Hgwarts{
 
     @Override
     public String toString() {
-        return "Слизерин\n" + getName() + " " + getSurname() + "\n" +
+        return "Качества которые присущи всем студентам Грифиндора: благородство, честь, храбрость." + "\n" +
+                "Качества которые присущи всем студентам Пуффендуй: трудолюбие, верность, честность." + "\n" +
+                "Качества которые присущи всем студентам Когтевран: ум, мудрость, остроумие, творчество." + "\n" +
+                "Качества которые присущи всем студентам Слизерин: хитрость, решительность, амбициозность, находчивость, жажда власти." + "\n" +
+                "Слизерин\n" + getName() + " " + getSurname() + "\n" +
                 "Хитрость: " + cunning + "\n" +
                 "Решительность: " + determination + "\n" +
                 "Амбициозность: " + ambition + "\n" +
@@ -75,10 +70,9 @@ public class Slytherin extends Hgwarts{
                 "Жажда власти: " + lustForPower + "\n";
     }
 
-    public void equalsStudent(Hgwarts frist) {
-        Slytherin that = (Slytherin) frist;
-        int fristTotal = that.getCunning() + that.getDetermination() + that.getAmbition() + that.getResourcefulness() + that.getLustForPower();
-        int thisTotal =  this.cunning + this.determination + this.ambition + this.resourcefulness + that.lustForPower;
+    public void equalsStudent(SlytherinStudent frist) {
+        int fristTotal = frist.getCunning() + frist.getDetermination() + frist.getAmbition() + frist.getResourcefulness() + frist.getLustForPower();
+        int thisTotal =  this.cunning + this.determination + this.ambition + this.resourcefulness + this.lustForPower;
         if(fristTotal > thisTotal){
             System.out.println("Студент: " + frist.getName() + " " + frist.getSurname() + " лучший в Слизерине чем " + this.name + " " + this.surname);
 

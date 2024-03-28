@@ -1,9 +1,9 @@
-public class Hufflepuff extends Hgwarts{
+public class HufflepuffStudent extends HgwartsStudent{
     private int hardWork; // трудолюбие
     private int loyalty; // верность
     private int honesty; // честность
 
-    public Hufflepuff(String name, String surname,int thePowerOfMagic, int transgression, int hardWork, int loyalty, int honesty) {
+    public HufflepuffStudent(String name, String surname,int thePowerOfMagic, int transgression, int hardWork, int loyalty, int honesty) {
         super(name, surname, thePowerOfMagic, transgression);
         this.hardWork = hardWork;
         this.loyalty = loyalty;
@@ -34,29 +34,21 @@ public class Hufflepuff extends Hgwarts{
     public void setHonesty(int honesty) {
         this.honesty = honesty;
     }
-    public static void studentDescription(Hgwarts student){
-        Hufflepuff newStudent = (Hufflepuff) student;
-        System.out.println("Качества которые присущи всем студентам Грифиндора: благородство, честь, храбрость.");
-        System.out.println("Качества которые присущи всем студентам Пуффендуй: трудолюбие, верность, честность.");
-        System.out.println("Качества которые присущи всем студентам Когтевран: ум, мудрость, остроумие, творчество.");
-        System.out.println("Качества которые присущи всем студентам Слизерин: хитрость, решительность, амбициозность, находчивость, жажда власти.");
-        System.out.println(newStudent.toString());
-
-
-    }
-
 
     @Override
     public String toString() {
-        return "Пуффендуй\n" + getName() + " " + getSurname() + "\n" +
+        return "Качества которые присущи всем студентам Грифиндора: благородство, честь, храбрость." + "\n" +
+                "Качества которые присущи всем студентам Пуффендуй: трудолюбие, верность, честность." + "\n" +
+                "Качества которые присущи всем студентам Когтевран: ум, мудрость, остроумие, творчество." + "\n" +
+                "Качества которые присущи всем студентам Слизерин: хитрость, решительность, амбициозность, находчивость, жажда власти." + "\n" +
+                "Пуффендуй\n" + getName() + " " + getSurname() + "\n" +
                 "Трудолюбие: " + hardWork + "\n" +
                 "Верность: " + loyalty + "\n" +
                 "Честность: " + honesty + "\n";
     }
 
-    public void equalsStudent(Hgwarts frist) {
-        Hufflepuff that = (Hufflepuff) frist;
-        int fristTotal = that.getHardWork() + that.getLoyalty() + that.getHonesty();
+    public void equalsStudent(HufflepuffStudent frist) {
+        int fristTotal = frist.getHardWork() + frist.getLoyalty() + frist.getHonesty();
         int thisTotal =  this.hardWork + this.loyalty + this.honesty;
         if(fristTotal > thisTotal){
             System.out.println("Студент: " + frist.getName() + " " + frist.getSurname() + " лучший в Пуффендуе чем " + this.name + " " + this.surname);

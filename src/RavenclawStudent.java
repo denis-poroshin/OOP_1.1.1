@@ -1,10 +1,10 @@
-public class Ravenclaw extends Hgwarts{
+public class RavenclawStudent extends HgwartsStudent{
     private int mind; // ум
     private int wisdom; // мудрость
     private int wit; // остроумие
     private int creation; // творчество
 
-    public Ravenclaw(String name, String surname,int thePowerOfMagic, int transgression, int mind, int wisdom, int wit, int creation) {
+    public RavenclawStudent(String name, String surname,int thePowerOfMagic, int transgression, int mind, int wisdom, int wit, int creation) {
         super(name, surname, thePowerOfMagic, transgression);
         this.mind = mind;
         this.wisdom = wisdom;
@@ -44,30 +44,24 @@ public class Ravenclaw extends Hgwarts{
     public void setCreation(int creation) {
         this.creation = creation;
     }
-    public static void studentDescription(Hgwarts student){
-        Ravenclaw newStudent = (Ravenclaw) student;
-        System.out.println("Качества которые присущи всем студентам Грифиндора: благородство, честь, храбрость.");
-        System.out.println("Качества которые присущи всем студентам Пуффендуй: трудолюбие, верность, честность.");
-        System.out.println("Качества которые присущи всем студентам Когтевран: ум, мудрость, остроумие, творчество.");
-        System.out.println("Качества которые присущи всем студентам Слизерин: хитрость, решительность, амбициозность, находчивость, жажда власти.");
-        System.out.println(newStudent.toString());
 
-
-    }
 
 
     @Override
     public String toString() {
-        return "Когтевран\n" + getName() + " " +  getSurname() + "\n" +
+        return "Качества которые присущи всем студентам Грифиндора: благородство, честь, храбрость." + "\n" +
+                "Качества которые присущи всем студентам Пуффендуй: трудолюбие, верность, честность." + "\n" +
+                "Качества которые присущи всем студентам Когтевран: ум, мудрость, остроумие, творчество." + "\n" +
+                "Качества которые присущи всем студентам Слизерин: хитрость, решительность, амбициозность, находчивость, жажда власти." + "\n" +
+                "Когтевран\n" + getName() + " " +  getSurname() + "\n" +
                 "Ум: " + mind + "\n" +
                 "Мудрость: " + wisdom + "\n" +
                 "Остроумие: " + wit + "\n" +
                 "Творчество: " + creation + "\n";
     }
 
-    public void equalsStudent(Hgwarts frist) {
-        Ravenclaw that = (Ravenclaw) frist;
-        int fristTotal = that.getMind() + that.getWisdom() + that.getWit() + that.getCreation();
+    public void equalsStudent(RavenclawStudent frist) {
+        int fristTotal = frist.getMind() + frist.getWisdom() + frist.getWit() + frist.getCreation();
         int thisTotal =  this.mind + this.wisdom + this.wit + this.creation;
         if(fristTotal > thisTotal){
             System.out.println("Студент: " + frist.getName() + " " + frist.getSurname() + " лучший в Когтевране чем " + this.name + " " + this.surname);
